@@ -8,6 +8,7 @@
       "size" : "20x20"
     },
     {
+      "filename" : "60x60.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
@@ -49,12 +50,14 @@
       "size" : "40x40"
     },
     {
+      "filename" : "120x120.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
+      "filename" : "120x120 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
