@@ -1,29 +1,96 @@
-//
-//  HabilidadeViewController.swift
-//  sensei.ia
-//
-//  Created by user262081 on 5/11/24.
-//
-
 import UIKit
 
-class HabilidadeViewController: UIViewController {
+class HabilidadeViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var habilidadeTextField: UITextField!
+    @IBOutlet weak var habilidadesTableView: UITableView!
+    
+    var habilidades: [Int: String] = [:]
+    var habilidadesFiltradas: [(id: Int, nome: String)] = []
+    var habilidadeSelecionada: (id: Int, nome: String)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        habilidadesTableView.dataSource = self
+        habilidadesTableView.delegate = self
+        habilidadeTextField.delegate = self
+        
+        loadSkills()
+        habilidadesTableView.isHidden = true // Esconde a tabela até que seja necessário mostrá-la
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+        filterContentForSearchText(currentText)
+        return true
     }
-    */
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return habilidadesFiltradas.count
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HabilidadeCell", for: indexPath)
+        cell.textLabel?.text = habilidadesFiltradas[indexPath.row].nome
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        habilidadeSelecionada = habilidadesFiltradas[indexPath.row]
+        habilidadeTextField.text = habilidadeSelecionada?.nome
+        habilidadesTableView.isHidden = true
+    }
+
+    func filterContentForSearchText(_ searchText: String) {
+        habilidadesFiltradas = habilidades.filter { (_, nome) in
+            return nome.lowercased().contains(searchText.lowercased())
+        }.map { (id, nome) in
+            (id, nome)
+        }
+        habilidadesTableView.isHidden = habilidadesFiltradas.isEmpty
+        habilidadesTableView.reloadData()
+    }
+
+    func loadSkills() {
+        if let path = Bundle.main.path(forResource: "habilidades", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let areasDeInteresse = json["areasDeInteresse"] as? [[String: Any]] {
+                    for area in areasDeInteresse {
+                        if let habilidadesArray = area["habilidades"] as? [[String: Any]] {
+                            for habilidade in habilidadesArray {
+                                if let id = habilidade["id"] as? Int, let nome = habilidade["nome"] as? String {
+                                    habilidades[id] = nome
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch {
+                print("Erro ao carregar ou decodificar JSON: \(error)")
+            }
+        }
+    }
+
+    @IBAction func irParaExperienciaButtonTapped(_ sender: UIButton) {
+        if let selecao = habilidadeSelecionada, !selecao.nome.isEmpty {
+            // Navegar para a próxima tela
+            performSegue(withIdentifier: "irParaExperienciaSegue", sender: self)
+        } else {
+            // Alertar o usuário que nenhuma habilidade foi selecionada
+            let alert = UIAlertController(title: "Seleção de Habilidade", message: "Por favor, selecione uma habilidade antes de prosseguir.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "irParaExperienciaSegue" {
+            if let nextViewController = segue.destination as? ExperienciaViewController {
+                nextViewController.habilidade = habilidadeSelecionada
+            }
+        }
+    }
 }
