@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9015877C2BF58C82001B1FA9 /* SucessoMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9015877B2BF58C82001B1FA9 /* SucessoMatchViewController.swift */; };
 		902758B32BF0787D00230B6C /* FormacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902758B22BF0787D00230B6C /* FormacaoViewController.swift */; };
 		903EACBB2BF02CD400353FA0 /* habilidades.json in Resources */ = {isa = PBXBuildFile; fileRef = 903EACBA2BF02CD400353FA0 /* habilidades.json */; };
 		903EACBD2BF02F1500353FA0 /* HabilidadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903EACBC2BF02F1500353FA0 /* HabilidadeViewController.swift */; };
@@ -25,6 +26,7 @@
 		904447742BE9A953006E67B2 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904447732BE9A953006E67B2 /* RegistroViewController.swift */; };
 		904447792BE9B5CC006E67B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 904447782BE9B5CC006E67B2 /* FirebaseAuth */; };
 		9044477D2BE9B9CF006E67B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9044477C2BE9B9CF006E67B2 /* GoogleService-Info.plist */; };
+		908605192BF5A2AB002D7BF6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908605182BF5A2AB002D7BF6 /* PerfilViewController.swift */; };
 		90A282362BF2FA9B000E36CC /* mentores.json in Resources */ = {isa = PBXBuildFile; fileRef = 90A282342BF2FA9A000E36CC /* mentores.json */; };
 		90A282372BF2FA9B000E36CC /* aprendizes.json in Resources */ = {isa = PBXBuildFile; fileRef = 90A282352BF2FA9A000E36CC /* aprendizes.json */; };
 		90B6E3F62BF2D61C00237E95 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B6E3F52BF2D61C00237E95 /* Usuario.swift */; };
@@ -51,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9015877B2BF58C82001B1FA9 /* SucessoMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SucessoMatchViewController.swift; sourceTree = "<group>"; };
 		902758B22BF0787D00230B6C /* FormacaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormacaoViewController.swift; sourceTree = "<group>"; };
 		903EACBA2BF02CD400353FA0 /* habilidades.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = habilidades.json; path = ../../../Downloads/habilidades.json; sourceTree = "<group>"; };
 		903EACBC2BF02F1500353FA0 /* HabilidadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabilidadeViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		904447712BE9A943006E67B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		904447732BE9A953006E67B2 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		9044477C2BE9B9CF006E67B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		908605182BF5A2AB002D7BF6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		90A282342BF2FA9A000E36CC /* mentores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mentores.json; path = ../../../Downloads/mentores.json; sourceTree = "<group>"; };
 		90A282352BF2FA9A000E36CC /* aprendizes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = aprendizes.json; path = ../../../Downloads/aprendizes.json; sourceTree = "<group>"; };
 		90B6E3F52BF2D61C00237E95 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				904447412BE9A803006E67B2 /* AppDelegate.swift */,
 				904447432BE9A803006E67B2 /* SceneDelegate.swift */,
 				904447472BE9A803006E67B2 /* Main.storyboard */,
+				908605182BF5A2AB002D7BF6 /* PerfilViewController.swift */,
 				90B6E3F52BF2D61C00237E95 /* Usuario.swift */,
 				904447712BE9A943006E67B2 /* LoginViewController.swift */,
 				904447732BE9A953006E67B2 /* RegistroViewController.swift */,
@@ -144,6 +149,7 @@
 				903EACC12BF054F800353FA0 /* InteresseViewController.swift */,
 				902758B22BF0787D00230B6C /* FormacaoViewController.swift */,
 				90EF49072BF1162600ABE5B8 /* MatchViewController.swift */,
+				9015877B2BF58C82001B1FA9 /* SucessoMatchViewController.swift */,
 				90F3664B2BED9B0100A83D51 /* PesquisaViewController.swift */,
 				90F3664D2BED9B2700A83D51 /* PesquisaTableViewCell.swift */,
 				9044474A2BE9A804006E67B2 /* Assets.xcassets */,
@@ -321,9 +327,11 @@
 				904447422BE9A803006E67B2 /* AppDelegate.swift in Sources */,
 				904447742BE9A953006E67B2 /* RegistroViewController.swift in Sources */,
 				903EACC22BF054F800353FA0 /* InteresseViewController.swift in Sources */,
+				908605192BF5A2AB002D7BF6 /* PerfilViewController.swift in Sources */,
 				903EACC02BF046C500353FA0 /* ExperienciaViewController.swift in Sources */,
 				904447442BE9A803006E67B2 /* SceneDelegate.swift in Sources */,
 				90F3664E2BED9B2700A83D51 /* PesquisaTableViewCell.swift in Sources */,
+				9015877C2BF58C82001B1FA9 /* SucessoMatchViewController.swift in Sources */,
 				903EACBD2BF02F1500353FA0 /* HabilidadeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

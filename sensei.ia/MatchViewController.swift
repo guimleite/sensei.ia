@@ -21,10 +21,14 @@ class MatchViewController: UIViewController {
     @IBOutlet var formacaoMatch: [UILabel]!
     @IBOutlet var experienciaMatch: [UILabel]!
     @IBOutlet var iconeMatch: [UIImageView]!
+    @IBOutlet var botaoMatch: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
+        for botao in botaoMatch {
+            botao.addTarget(self, action: #selector(botaoMatchTapped(_:)), for: .touchUpInside)
+        }
         carregarUsuariosBaseadosNaExperiencia()
         preencherLabelsComUsuarios()
         
@@ -145,6 +149,18 @@ class MatchViewController: UIViewController {
             }
             
 
+        }
+    }
+    @objc func botaoMatchTapped(_ sender: UIButton) {
+        let tag = sender.tag
+        performSegue(withIdentifier: "sucessoMatchSegue", sender: tag)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sucessoMatchSegue" {
+            if let tag = sender as? Int, let destinationVC = segue.destination as? SucessoMatchViewController {
+                destinationVC.match = usuarios[tag]
+            }
         }
     }
     /*
