@@ -26,6 +26,7 @@
 		904447742BE9A953006E67B2 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904447732BE9A953006E67B2 /* RegistroViewController.swift */; };
 		904447792BE9B5CC006E67B2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 904447782BE9B5CC006E67B2 /* FirebaseAuth */; };
 		9044477D2BE9B9CF006E67B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9044477C2BE9B9CF006E67B2 /* GoogleService-Info.plist */; };
+		904A50222BF9BB6800D4E42F /* localizacao.json in Resources */ = {isa = PBXBuildFile; fileRef = 904A50212BF9BB6800D4E42F /* localizacao.json */; };
 		908605192BF5A2AB002D7BF6 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908605182BF5A2AB002D7BF6 /* PerfilViewController.swift */; };
 		90A282362BF2FA9B000E36CC /* mentores.json in Resources */ = {isa = PBXBuildFile; fileRef = 90A282342BF2FA9A000E36CC /* mentores.json */; };
 		90A282372BF2FA9B000E36CC /* aprendizes.json in Resources */ = {isa = PBXBuildFile; fileRef = 90A282352BF2FA9A000E36CC /* aprendizes.json */; };
@@ -75,6 +76,7 @@
 		904447712BE9A943006E67B2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		904447732BE9A953006E67B2 /* RegistroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		9044477C2BE9B9CF006E67B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		904A50212BF9BB6800D4E42F /* localizacao.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = localizacao.json; path = ../../../Downloads/localizacao.json; sourceTree = "<group>"; };
 		908605182BF5A2AB002D7BF6 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		90A282342BF2FA9A000E36CC /* mentores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mentores.json; path = ../../../Downloads/mentores.json; sourceTree = "<group>"; };
 		90A282352BF2FA9A000E36CC /* aprendizes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = aprendizes.json; path = ../../../Downloads/aprendizes.json; sourceTree = "<group>"; };
@@ -133,9 +135,10 @@
 		904447402BE9A803006E67B2 /* sensei.ia */ = {
 			isa = PBXGroup;
 			children = (
-				903EACBA2BF02CD400353FA0 /* habilidades.json */,
-				90A282352BF2FA9A000E36CC /* aprendizes.json */,
 				90A282342BF2FA9A000E36CC /* mentores.json */,
+				90A282352BF2FA9A000E36CC /* aprendizes.json */,
+				903EACBA2BF02CD400353FA0 /* habilidades.json */,
+				904A50212BF9BB6800D4E42F /* localizacao.json */,
 				904447452BE9A803006E67B2 /* ViewController.swift */,
 				904447412BE9A803006E67B2 /* AppDelegate.swift */,
 				904447432BE9A803006E67B2 /* SceneDelegate.swift */,
@@ -289,6 +292,7 @@
 			files = (
 				9044474B2BE9A804006E67B2 /* Assets.xcassets in Resources */,
 				9044477D2BE9B9CF006E67B2 /* GoogleService-Info.plist in Resources */,
+				904A50222BF9BB6800D4E42F /* localizacao.json in Resources */,
 				90A282362BF2FA9B000E36CC /* mentores.json in Resources */,
 				9044474E2BE9A804006E67B2 /* Base in Resources */,
 				903EACBB2BF02CD400353FA0 /* habilidades.json in Resources */,

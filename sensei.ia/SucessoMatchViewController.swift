@@ -24,7 +24,7 @@ class SucessoMatchViewController: UIViewController {
             let tipo = (experiencia == 1 || experiencia == 2 || experiencia == 0) ? "aprendiz" : "mentor"
             
             nomeMatchLabel.text = "Confira o perfil de \(nome), seu novo \(tipo)!"
-            tipoMatchLabel.text = (experiencia == 1 || experiencia == 2) ? "seu mentor!" : "seu aprendiz!"
+            tipoMatchLabel.text = (experiencia == 1 || experiencia == 2) ? "seu aprendiz!" : "seu mentor!"
         }
         
         matchButton.addTarget(self, action: #selector(matchButtonTapped), for: .touchUpInside)

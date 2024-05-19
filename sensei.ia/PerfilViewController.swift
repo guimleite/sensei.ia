@@ -44,25 +44,7 @@ class PerfilViewController: UIViewController {
             habilidadeLabel.text = "N/A"
             experienciaLabel.text = "N/A"
         }
-        
-        switch usuario.formacao {
-        case 1:
-            formacaoLabel.text = "Curso Livre"
-        case 2:
-            formacaoLabel.text = "Curso Técnico"
-        case 3:
-            formacaoLabel.text = "Graduação"
-        case 4:
-            formacaoLabel.text = "Especialização"
-        case 5:
-            formacaoLabel.text = "MBA"
-        case 6:
-            formacaoLabel.text = "Mestrado"
-        case 7:
-            formacaoLabel.text = "Doutorado"
-        default:
-            formacaoLabel.text = "N/A"
-        }
+        formacaoLabel.text = usuario.formacao.nome
     }
     
 

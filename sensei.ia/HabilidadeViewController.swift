@@ -16,7 +16,7 @@ class HabilidadeViewController: UIViewController, UITextFieldDelegate, UITableVi
         habilidadesTableView.delegate = self
         habilidadeTextField.delegate = self
         
-        loadSkills()
+        loadHabilidades()
         habilidadesTableView.isHidden = true // Esconde a tabela até que seja necessário mostrá-la
     }
     
@@ -52,7 +52,7 @@ class HabilidadeViewController: UIViewController, UITextFieldDelegate, UITableVi
         habilidadesTableView.reloadData()
     }
 
-    func loadSkills() {
+    func loadHabilidades() {
         if let path = Bundle.main.path(forResource: "habilidades", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))

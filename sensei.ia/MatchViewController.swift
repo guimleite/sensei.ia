@@ -46,7 +46,7 @@ class MatchViewController: UIViewController {
             return
         }
         print("Experiência --> ", nivelDeExperiencia)
-        // Ajuste para carregar o arquivo JSON correto
+        
         let nomeArquivo = (nivelDeExperiencia == 1 || nivelDeExperiencia == 2) ? "mentores.json" : "aprendizes.json"
         
         if let path = Bundle.main.path(forResource: nomeArquivo, ofType: nil) {
@@ -61,9 +61,17 @@ class MatchViewController: UIViewController {
                            let sobrenome = usuarioDict["sobrenome"] as? String,
                            let email = usuarioDict["email"] as? String,
                            let senha = usuarioDict["senha"] as? String,
-                           let formacao = usuarioDict["formacao"] as? Int,
+                           let formacaoDict = usuarioDict["formacao"] as? [String: Any],
+                           let formacaoId = formacaoDict["id"] as? Int,
+                           let formacaoNome = formacaoDict["nome"] as? String,
                            let areasDeInteresseArray = usuarioDict["areasDeInteresse"] as? [[String: Any]],
-                           let habilidadesArray = usuarioDict["habilidades"] as? [[String: Any]] {
+                           let habilidadesArray = usuarioDict["habilidades"] as? [[String: Any]],
+                           let localizacaoDict = usuarioDict["localizacao"] as? [String: Any],
+                           let localizacaoId = localizacaoDict["id"] as? Int,
+                           let localizacaoNome = localizacaoDict["nome"] as? String,
+                           let avaliacao = usuarioDict["avaliacao"] as? Int {
+                            
+                            let formacao = Formacao(id: formacaoId, nome: formacaoNome)
                             
                             let areasDeInteresse = areasDeInteresseArray.compactMap { areaDict -> AreaDeInteresse? in
                                 if let id = areaDict["id"] as? Int, let nome = areaDict["nome"] as? String {
@@ -79,8 +87,10 @@ class MatchViewController: UIViewController {
                                 return nil
                             }
                             
+                            let localizacao = Localizacao(id: localizacaoId, nome: localizacaoNome)
+                            
                             if let habilidade = habilidade, habilidades.contains(where: { $0.id == habilidade.id }) {
-                                let usuario = Usuario(id: id, nome: nome, sobrenome: sobrenome, email: email, senha: senha, formacao: formacao, areasDeInteresse: areasDeInteresse, habilidades: habilidades)
+                                let usuario = Usuario(id: id, nome: nome, sobrenome: sobrenome, email: email, senha: senha, formacao: formacao, areasDeInteresse: areasDeInteresse, habilidades: habilidades, localizacao: localizacao, avaliacao: avaliacao)
                                 usuarios.append(usuario)
                             }
                         }
@@ -95,6 +105,7 @@ class MatchViewController: UIViewController {
             print("Arquivo JSON não encontrado")
         }
     }
+
     
     func preencherLabelsComUsuarios() {
         for i in 0..<min(usuarios.count, 3) {
@@ -132,7 +143,7 @@ class MatchViewController: UIViewController {
                 7: "Doutorado"
             ]
             
-            let formacao = usuario.formacao
+            let formacao = usuario.formacao.id
             
             formacaoMatch[i].text = formacaoNiveis[formacao] ?? "Formação desconhecida"
             formacaoMatch[i].sizeToFit()

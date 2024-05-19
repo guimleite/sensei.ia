@@ -11,17 +11,29 @@ struct AreaDeInteresse {
     var nome: String
 }
 
+struct Localizacao {
+    var id: Int
+    var nome: String
+}
+
+struct Formacao {
+    var id: Int
+    var nome: String
+}
+
 class Usuario {
     var id: Int
     var nome: String
     var sobrenome: String
     var email: String
     var senha: String
-    var formacao : Int
+    var formacao: Formacao
     var areasDeInteresse: [AreaDeInteresse]
     var habilidades: [Habilidade]
-    
-    init(id: Int, nome: String, sobrenome: String, email: String, senha: String, formacao: Int,areasDeInteresse: [AreaDeInteresse] = [], habilidades: [Habilidade] = []) {
+    var localizacao: Localizacao?
+    var avaliacao: Int
+
+    init(id: Int, nome: String, sobrenome: String, email: String, senha: String, formacao: Formacao, areasDeInteresse: [AreaDeInteresse] = [], habilidades: [Habilidade] = [], localizacao: Localizacao? = nil, avaliacao: Int = 0) {
         self.id = id
         self.nome = nome
         self.sobrenome = sobrenome
@@ -30,5 +42,7 @@ class Usuario {
         self.formacao = formacao
         self.areasDeInteresse = areasDeInteresse
         self.habilidades = habilidades
+        self.localizacao = localizacao
+        self.avaliacao = avaliacao
     }
 }
