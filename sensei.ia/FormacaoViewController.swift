@@ -50,23 +50,35 @@ class FormacaoViewController: UIViewController {
             return  // Caso inválido
         }
         
-        var currentConfig = sender.configuration ?? UIButton.Configuration.filled()
         let selectedImage = UIImage(named: "Card3Selecionado.png")
         let normalImage = UIImage(named: "Card3.png")
+        
+        var currentConfig = sender.configuration ?? UIButton.Configuration.filled()
         let isCurrentlySelected = currentConfig.background.image?.pngData() == selectedImage?.pngData()
 
-        // Toggle the background image and update the dictionary based on the selection
         if isCurrentlySelected {
-           currentConfig.background.image = normalImage
+            currentConfig.background.image = normalImage
+            formacao = nil
         } else {
-           currentConfig.background.image = selectedImage
+            buttons.forEach { button in
+                var config = button.configuration ?? UIButton.Configuration.filled()
+                config.background.image = normalImage
+                button.configuration = config
+            }
+            currentConfig.background.image = selectedImage
         }
 
         sender.configuration = currentConfig
     }
     
     @IBAction func irParaFormacaoButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "irParaMatchSegue", sender: self)
+        if formacao == nil {
+            let alert = UIAlertController(title: "Seleção de Formação", message: "Por favor, selecione uma formação antes de prosseguir.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "irParaMatchSegue", sender: self)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

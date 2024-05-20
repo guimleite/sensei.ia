@@ -9,10 +9,16 @@ import UIKit
 
 class PrivateChatViewController: UIViewController {
 
+    @IBOutlet weak var nomeLabel: UILabel!
+    
+    var nome: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let nome = nome {
+            nomeLabel.text = nome
+        }
     }
     
 

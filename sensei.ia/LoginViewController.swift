@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
             }else{
                 // Go to home
                 self.performSegue(withIdentifier: "goToNext", sender: self)
+                let appDelegate = UIApplication.shared.delegate as? AppDelegate
+                appDelegate?.scheduleLocalNotification(title: "Sensei do dia 💡", delay: 1, message: "'A Força estará com você, sempre.' - Obi-Wan Kenobi")
             }
         }
     }

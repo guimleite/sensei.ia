@@ -22,6 +22,7 @@ class MatchViewController: UIViewController {
     @IBOutlet var experienciaMatch: [UILabel]!
     @IBOutlet var iconeMatch: [UIImageView]!
     @IBOutlet var botaoMatch: [UIButton]!
+    @IBOutlet var avaliacaoMatch: [UIImageView]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,19 +134,7 @@ class MatchViewController: UIViewController {
             experienciaMatch[i].text = experienciaNiveis[experiencia] ?? "Nível desconhecido"
             experienciaMatch[i].sizeToFit()
             
-            let formacaoNiveis = [
-                1: "Curso Livre",
-                2: "Curso Técnico",
-                3: "Graduação",
-                4: "Especialização",
-                5: "MBA",
-                6: "Mestrado",
-                7: "Doutorado"
-            ]
-            
-            let formacao = usuario.formacao.id
-            
-            formacaoMatch[i].text = formacaoNiveis[formacao] ?? "Formação desconhecida"
+            formacaoMatch[i].text = usuario.formacao.nome
             formacaoMatch[i].sizeToFit()
             
             let iconeImagens = [
@@ -159,9 +148,20 @@ class MatchViewController: UIViewController {
                 iconeMatch[i].image = UIImage(named: imagemNome)
             }
             
+            let avaliacao = usuario.avaliacao
+            let startTag = i * 5 + 1
+            let endTag = startTag + 4
 
+            for imageView in avaliacaoMatch where imageView.tag >= startTag && imageView.tag <= endTag {
+                if imageView.tag < startTag + avaliacao {
+                    imageView.image = UIImage(named: "estrela-preenchida")
+                } else {
+                    imageView.image = UIImage(named: "estrela-sem-preenchimento")
+                }
+            }
         }
     }
+    
     @objc func botaoMatchTapped(_ sender: UIButton) {
         let tag = sender.tag
         performSegue(withIdentifier: "sucessoMatchSegue", sender: tag)

@@ -17,7 +17,8 @@ class PesquisaTableViewCell: UITableViewCell {
     @IBOutlet weak var pesquisaImage: UIImageView!
     @IBOutlet weak var localizacaoLabel: UILabel!
     @IBOutlet var avaliacaoImage: [UIImageView]!
-    
+    var delegate: PesquisaTableViewCellDelegate?
+
     var usuario: Usuario? {
         didSet {
             guard let usuario = usuario else { return }
@@ -60,9 +61,17 @@ class PesquisaTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        pesquisaButton.addTarget(self, action: #selector(pesquisaButtonTapped), for: .touchUpInside)
+
         // Initialization code
     }
 
+    @objc func pesquisaButtonTapped() {
+        if let usuario = usuario {
+            delegate?.pesquisaButtonTapped(usuario: usuario)
+        }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -70,3 +79,6 @@ class PesquisaTableViewCell: UITableViewCell {
     }
 }
 
+protocol PesquisaTableViewCellDelegate {
+    func pesquisaButtonTapped(usuario: Usuario)
+}

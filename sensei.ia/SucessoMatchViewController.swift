@@ -31,6 +31,15 @@ class SucessoMatchViewController: UIViewController {
     }
       
     @objc func matchButtonTapped() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        if let match = match {
+            let experiencia = match.habilidades.first?.nivelDeExperiencia ?? 0
+            let mensagem = (experiencia == 1 || experiencia == 2 || experiencia == 0) ? "Já viu o seu novo aprendiz?" : "Já viu o seu novo mentor?"
+            
+            appDelegate?.scheduleLocalNotification(title: "Ei, você aí 👀", delay: 1, message: mensagem)
+        }
+    
         performSegue(withIdentifier: "perfilSegue", sender: self)
     }
 

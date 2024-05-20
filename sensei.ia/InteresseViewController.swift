@@ -72,7 +72,13 @@ class InteresseViewController: UIViewController {
     }
     
     @IBAction func irParaFormacaoButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "irParaFormacaoSegue", sender: self)
+        if areasDeInteresse.isEmpty {
+             let alert = UIAlertController(title: "Seleção de Interesse", message: "Por favor, selecione ao menos uma área de interesse antes de prosseguir.", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+             self.present(alert, animated: true, completion: nil)
+         } else {
+             performSegue(withIdentifier: "irParaFormacaoSegue", sender: self)
+         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

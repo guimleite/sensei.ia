@@ -1,6 +1,6 @@
 import UIKit
 
-class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, PesquisaTableViewCellDelegate {
 
     @IBOutlet weak var pesquisaBar: UISearchBar!
     @IBOutlet weak var filtroTableView: UITableView!
@@ -8,6 +8,7 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     @IBOutlet weak var pesquisaTableView: UITableView!
 
     var usuarios: [Usuario] = []
+    var usuarioSelecionado: Usuario?
     var filtroAtual: Int?
     var opcoesDeFormacao = ["Curso livre", "Curso técnico", "Graduação", "Especialização", "MBA", "Mestrado", "Doutorado"]
     var opcoesDeExperiencia = ["Iniciante", "Intermediário", "Avançado", "Especialista"]
@@ -21,6 +22,7 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
         
         configureButtons()
         pesquisaBar.delegate = self
+        filtroAtual = 1
         filtroTableView.isHidden = true
         filtroTableView.dataSource = self
         filtroTableView.delegate = self
@@ -28,10 +30,12 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
         filtroTableView.isUserInteractionEnabled = true
         filtroTableView.layer.zPosition = 1
         filtroTableView.isScrollEnabled = true
+        opcoesFiltradas = loadHabilidadesData()
+        filtroTableView.reloadData()
+
 
         pesquisaTableView.dataSource = self
         pesquisaTableView.delegate = self
-        
         pesquisaTableView.rowHeight = UITableView.automaticDimension
     }
     
@@ -197,11 +201,7 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
             opcoesFiltradas = []
         }
         
-        if tag == 0 || tag == 1 || tag == 4 {
-            filtroTableView.isHidden = true
-        } else {
-            filtroTableView.isHidden = opcoesFiltradas.isEmpty
-        }
+        filtroTableView.isHidden = true
         
         filtroTableView.reloadData()
         ajustarAlturaDaTabela()  // Ajusta a altura baseada no número de células visíveis
@@ -234,6 +234,19 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
         // Chama a função de atualização com base na tag do botão
         updateFilterOptions(forTag: sender.tag)
     }
+    
+    func pesquisaButtonTapped(usuario: Usuario) {
+        self.usuarioSelecionado = usuario
+        performSegue(withIdentifier: "pesquisaPerfilSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pesquisaPerfilSegue" {
+            if let destinationVC = segue.destination as? PerfilViewController {
+                destinationVC.usuario = self.usuarioSelecionado
+            }
+        }
+    }
 
     // UITableViewDataSource methods
 
@@ -252,7 +265,10 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
             return cell
         } else { // assumindo que seja a tabela de usuários
             let cell = tableView.dequeueReusableCell(withIdentifier: "PesquisaTableViewCell", for: indexPath) as! PesquisaTableViewCell
-            cell.usuario = usuarios[indexPath.row]
+            let usuario = usuarios[indexPath.row]
+            cell.usuario = usuario
+            cell.delegate = self
+            cell.selectionStyle = .none
             return cell
         }
     }
@@ -291,13 +307,16 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
             }
             
             pesquisaTableView.reloadData()
+        } else{
+            pesquisaTableView.deselectRow(at: indexPath, animated: false)
         }
     }
 
     func ajustarAlturaDaTabela() {
         let alturaDaLinha = filtroTableView.rowHeight
         let alturaTotal = alturaDaLinha * CGFloat(opcoesFiltradas.count)
-        filtroTableView.frame.size.height = alturaTotal
+        filtroTableView.frame.size.height = alturaTotal        
+        filtroTableView.isScrollEnabled = true
     }
 
 

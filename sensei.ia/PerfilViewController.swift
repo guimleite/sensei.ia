@@ -11,8 +11,10 @@ class PerfilViewController: UIViewController {
 
     @IBOutlet weak var experienciaLabel: UILabel!
     @IBOutlet weak var nomeLabel: UILabel!
+    @IBOutlet weak var localizacaoLabel: UILabel!
     @IBOutlet weak var formacaoLabel: UILabel!
     @IBOutlet weak var habilidadeLabel: UILabel!
+    @IBOutlet weak var avaliacaoLabel: UILabel!
     
     var usuario: Usuario?
     
@@ -24,6 +26,7 @@ class PerfilViewController: UIViewController {
         }
         
         nomeLabel.text = "\(usuario.nome) \(usuario.sobrenome)"
+        localizacaoLabel.text = usuario.localizacao?.nome
         
         if let habilidade = usuario.habilidades.first {
             habilidadeLabel.text = habilidade.nome
@@ -45,9 +48,33 @@ class PerfilViewController: UIViewController {
             experienciaLabel.text = "N/A"
         }
         formacaoLabel.text = usuario.formacao.nome
+        avaliacaoLabel.text = String(usuario.avaliacao)
     }
     
+    @IBAction func avaliacaoTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "avaliacaoSegue", sender: self)
+    }
+    
+    @IBAction func chatTapped(_ sender: Any) {
+        performSegue(withIdentifier: "privateChatSegue", sender: self)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "avaliacaoSegue" {
+            if let destinationVC = segue.destination as? AvaliacaoViewController {
+                if let usuario = usuario {
+                    destinationVC.nome = "\(usuario.nome) \(usuario.sobrenome)"
+                }
+            }
+        } else if segue.identifier == "privateChatSegue" {
+            if let destinationVC = segue.destination as? PrivateChatViewController {
+                if let usuario = usuario {
+                    destinationVC.nome = "\(usuario.nome) \(usuario.sobrenome)"
+                }
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

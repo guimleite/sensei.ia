@@ -30,8 +30,8 @@
             filePath = "sensei.ia/PesquisaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "filterUsersByName(selectedName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "sensei.ia/PesquisaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "loadAndFilterUsers(from:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "sensei.ia/PesquisaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "loadAndFilterUsers(from:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "sensei.ia/PesquisaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "loadAndFilterUsers(from:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "sensei.ia/PesquisaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "loadAndFilterUsers(from:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "sensei.ia/PesquisaViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,40 +126,10 @@
             filePath = "sensei.ia/PesquisaTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "usuario"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "59574A3C-8BD7-4ABD-B4E0-1DBF8C21663D - d17560105f416f68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "sensei_ia.PesquisaTableViewCell.usuario.didset : Swift.Optional&lt;sensei_ia.Usuario&gt;"
-                  moduleName = "sensei.ia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user262081/Desktop/sensei.ia/sensei.ia/PesquisaTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-               <Location
-                  uuid = "59574A3C-8BD7-4ABD-B4E0-1DBF8C21663D - d17560105f416f68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "sensei_ia.PesquisaTableViewCell.usuario.didset : Swift.Optional&lt;sensei_ia.Usuario&gt;"
-                  moduleName = "sensei.ia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user262081/Desktop/sensei.ia/sensei.ia/PesquisaTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -172,40 +142,42 @@
             filePath = "sensei.ia/PesquisaTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "usuario"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "4B1930C3-8DA7-4AC5-938B-344E33C05A2B - d17560105f416f68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "sensei_ia.PesquisaTableViewCell.usuario.didset : Swift.Optional&lt;sensei_ia.Usuario&gt;"
-                  moduleName = "sensei.ia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user262081/Desktop/sensei.ia/sensei.ia/PesquisaTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-               <Location
-                  uuid = "4B1930C3-8DA7-4AC5-938B-344E33C05A2B - d17560105f416f68"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "sensei_ia.PesquisaTableViewCell.usuario.didset : Swift.Optional&lt;sensei_ia.Usuario&gt;"
-                  moduleName = "sensei.ia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user262081/Desktop/sensei.ia/sensei.ia/PesquisaTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3819DB4C-09E6-4247-8478-3F77A0FAD0A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sensei.ia/InteresseViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "irParaFormacaoButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81ACC095-6C45-4793-A75C-27F3F7590FC1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "sensei.ia/AvaliacaoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "avaliacaoTapped(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
