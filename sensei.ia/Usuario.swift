@@ -1,5 +1,7 @@
 import Foundation
 
+// Calsse para usuarios, que representa uma entidade em nosso banco de dados
+
 struct Habilidade {
     var id: Int
     var nome: String

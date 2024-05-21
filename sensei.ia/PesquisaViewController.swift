@@ -10,6 +10,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     var usuarios: [Usuario] = []
     var usuarioSelecionado: Usuario?
     var filtroAtual: Int?
+    
+    // Os parametros para filtros serão carregados do back end
     var opcoesDeFormacao = ["Curso livre", "Curso técnico", "Graduação", "Especialização", "MBA", "Mestrado", "Doutorado"]
     var opcoesDeExperiencia = ["Iniciante", "Intermediário", "Avançado", "Especialista"]
     var opcoesDeAvaliacao = ["Uma estrela", "Duas estrelas", "Três estrelas", "Quatro estrelas", "Cinco estrelas"]
@@ -20,6 +22,7 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
         super.viewDidLoad()
         view.bringSubviewToFront(filtroTableView)
         
+        // A busca padrão filtra usuários com base em habilidades presentes no perfil
         configureButtons()
         pesquisaBar.delegate = self
         filtroAtual = 1
@@ -37,11 +40,16 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
         pesquisaTableView.dataSource = self
         pesquisaTableView.delegate = self
         pesquisaTableView.rowHeight = UITableView.automaticDimension
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.scheduleLocalNotification(title: "SenseiChat 💬", delay: 3, message: "Ana Silva te mandou uma nova mensagem!")
     }
     
     func loadNomes() -> [String] {
+        // Realiza uma soliciatão ao back end para carregar usuário com base na busca
+        
         var nomes: [String] = []
-        // Função para carregar e processar cada arquivo JSON
+        // Função para carregar e processar a resposta JSON
         func loadFromJSON(named fileName: String) {
             if let path = Bundle.main.path(forResource: fileName, ofType: "json") {
                 do {
@@ -68,7 +76,12 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
 
     func loadHabilidadesData() -> [String] {
+
+        // Realiza uma soliciatão ao back end para carregar habilidades para busca
+        
         var habilidades: [String] = []
+        // Função para carregar e processar a resposta JSON
+
         if let path = Bundle.main.path(forResource: "habilidades", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
@@ -92,7 +105,11 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
     
     func loadLocalizacaoData() -> [String] {
+        // Realiza uma soliciatão ao back end para carregar locais para busca
+
         var localizacoes: [String] = []
+        
+        // Função para carregar e processar a resposta JSON
         if let path = Bundle.main.path(forResource: "localizacao", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
@@ -109,6 +126,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Atualiaza sugestões de busca com base no texto digitado
+        
         if searchText.isEmpty {
             opcoesFiltradas = []
             filtroTableView.isHidden = true
@@ -174,6 +193,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
 
     func updateFilterOptions(forTag tag: Int) {
+        // Atualiza sugestoes com base no filtro selecionado
+        
         pesquisaBar.text = ""
         
         switch tag {
@@ -236,6 +257,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
     
     func pesquisaButtonTapped(usuario: Usuario) {
+        // Mostra o perifl do usuario selecionado
+        
         self.usuarioSelecionado = usuario
         performSegue(withIdentifier: "pesquisaPerfilSegue", sender: self)
     }
@@ -274,6 +297,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Povoa a tabela de uusario com base no filtro selecionado e texto digitado
+        
         if tableView == filtroTableView {
             filtroTableView.isHidden = true
             
@@ -321,6 +346,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
 
 
     func filterUsersByName(selectedName: String) {
+        // Filtra usuarios por nome no json resposta do back end
+        
         let components = selectedName.split(separator: " ", maxSplits: 1, omittingEmptySubsequences: true)
         guard components.count == 2 else { return }
         let firstName = String(components[0])
@@ -352,6 +379,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
 
     func filterUsersByHabilidade(selectedSkill: String) {
+        // Filtra usuarios no json resposta do back end por habilidade
+        
         var filteredUsers: [Usuario] = []
 
         func loadAndFilterUsers(from fileName: String) {
@@ -386,6 +415,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
     
     func filterUsersByFormacao(selectedFormacao: String) {
+        // Filtra usuarios no json resposta do back end com base na formação
+        
         guard let index = opcoesDeFormacao.firstIndex(of: selectedFormacao) else {
             print("Formação selecionada não encontrada.")
             return
@@ -424,6 +455,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
     
     func filterUsersByExperiencia(selectedExperiencia: String) {
+        // Filtra usuarios no json resposta do back end com base na experiência
+        
         guard let index = opcoesDeExperiencia.firstIndex(of: selectedExperiencia) else {
             print("Nível de experiência selecionado não encontrado.")
             return
@@ -464,6 +497,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
     
     func filterUsersByLocalizacao(selectedLocalizacao: String) {
+        // Filtra usuarios no json resposta do back end com base noa localizacao
+        
         var filteredUsers: [Usuario] = []
 
         func loadAndFilterUsers(from fileName: String) {
@@ -497,6 +532,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
     }
 
     func filterUsersByAvaliacao(selectedAvaliacao: String) {
+        // Filtra usuarios no json resposta do back end com base na pontuacao de avaliacao
+        
         guard let index = opcoesDeAvaliacao.firstIndex(of: selectedAvaliacao) else {
             print("Avaliação selecionada não encontrada.")
             return
@@ -536,6 +573,8 @@ class PesquisaViewController: UIViewController, UISearchBarDelegate, UITableView
 
     
     func parseUsuario(from dict: [String: Any]) -> Usuario? {
+        // Converte os usuario recebidos do back end em classes no app
+        
         if let id = dict["id"] as? Int,
            let nome = dict["nome"] as? String,
            let sobrenome = dict["sobrenome"] as? String,

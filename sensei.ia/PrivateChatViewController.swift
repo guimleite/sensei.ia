@@ -2,7 +2,7 @@
 //  PrivateChatViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/19/24.
+//  Created by Guilherme on 5/19/24.
 //
 
 import UIKit
@@ -14,6 +14,8 @@ class PrivateChatViewController: UIViewController {
     var nome: String?
     
     override func viewDidLoad() {
+        // Websocket paa chat
+        
         super.viewDidLoad()
 
         if let nome = nome {

@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/6/24.
+//  Created by Guilherme on 5/6/24.
 //
 
 import UIKit

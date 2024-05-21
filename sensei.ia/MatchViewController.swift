@@ -2,7 +2,7 @@
 //  MatchViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/12/24.
+//  Created by Guilherme on 5/12/24.
 //
 
 import UIKit
@@ -30,9 +30,12 @@ class MatchViewController: UIViewController {
         for botao in botaoMatch {
             botao.addTarget(self, action: #selector(botaoMatchTapped(_:)), for: .touchUpInside)
         }
+        
+        // As funções abaixo representam interações com o back end para realização do matchmaking
         carregarUsuariosBaseadosNaExperiencia()
         preencherLabelsComUsuarios()
         
+        // dados do  perfil usuario
         let habilidadeDescricao = habilidade != nil ? "Habilidade: \(habilidade!.nome) (ID: \(habilidade!.id))" : "Habilidade: não fornecida"
         let experienciaDescricao = experiencia != nil ? "Experiência: \(experiencia!.nome) (ID: \(experiencia!.id))" : "Experiência: não fornecida"
         let areasDeInteresseDescricao = areasDeInteresse.isEmpty ? "Áreas de Interesse: não fornecidas" : "Áreas de Interesse: \(areasDeInteresse.description)"
@@ -42,6 +45,8 @@ class MatchViewController: UIViewController {
     }
     
     func carregarUsuariosBaseadosNaExperiencia() {
+        // Aqui uma API será chamada para realizar o matchmaking, retornando perfil compativeis. O json carregado abaixo representa a resposta do back end
+        
         guard let nivelDeExperiencia = experiencia?.id else {
             print("Experiência não fornecida")
             return
@@ -109,6 +114,8 @@ class MatchViewController: UIViewController {
 
     
     func preencherLabelsComUsuarios() {
+        // Exibe os perfils compatives na tela
+        
         for i in 0..<min(usuarios.count, 3) {
             let usuario = usuarios[i]
             nomeMatch[i].text = "\(usuario.nome) \(usuario.sobrenome)"

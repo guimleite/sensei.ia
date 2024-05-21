@@ -2,7 +2,7 @@
 //  RegistroViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/6/24.
+//  Created by Guilherme on 5/6/24.
 //
 
 import UIKit
@@ -20,6 +20,8 @@ class RegistroViewController: UIViewController {
     }
     
     @IBAction func registrarClicked(_ sender: UIButton) {
+        // um novo usuario sera criado no back end
+        
         guard let email = emailTextField.text else {return}
         guard let senha = senhaTextField.text else {return}
         

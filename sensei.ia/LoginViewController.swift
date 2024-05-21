@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/6/24.
+//  Created by Guilherme on 5/6/24.
 //
 
 import UIKit
@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginClicked(_ sender: UIButton) {
+        // As informações de login serao verificadas com os dados do usuario no back end
+        
         guard let email = emailTextField.text else {return}
         guard let senha = senhaTextField.text else {return}
         

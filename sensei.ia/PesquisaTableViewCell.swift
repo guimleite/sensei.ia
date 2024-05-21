@@ -2,12 +2,14 @@
 //  PesquisaTableViewCell.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/9/24.
+//  Created by Guilherme on 5/9/24.
 //
 
 import UIKit
 
 class PesquisaTableViewCell: UITableViewCell {
+    
+    // dados dos usuarios na celula da tabela de resultados de pesquisa
 
     @IBOutlet weak var pesquisaButton: UIButton!
     @IBOutlet weak var nomeLabel: UILabel!

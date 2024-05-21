@@ -2,7 +2,7 @@
 //  InteresseViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/11/24.
+//  Created by Guilherme on 5/11/24.
 //
 
 import UIKit
@@ -33,6 +33,8 @@ class InteresseViewController: UIViewController {
     }
     
     @IBAction func interesseTapped(_ sender: UIButton) {
+        // As informações sobre áreas de interesse do usuário serão armazenadas no banco de dados e usadas posteriormente para unir mentores e aprendizes no matchmaking
+        
         let valor = sender.tag
         let area: String
         

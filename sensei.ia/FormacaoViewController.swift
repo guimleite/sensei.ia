@@ -2,7 +2,7 @@
 //  FormacaoViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/11/24.
+//  Created by Guilherme on 5/11/24.
 //
 
 import UIKit
@@ -19,6 +19,7 @@ class FormacaoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Os dados abaixo serão salvos para a criação de perfil do usuário
         let habilidadeDescricao = habilidade != nil ? "Habilidade: \(habilidade!.nome) (ID: \(habilidade!.id))" : "Habilidade: não fornecida"
         let experienciaDescricao = experiencia != nil ? "Experiência: \(experiencia!.nome) (ID: \(experiencia!.id))" : "Experiência: não fornecida"
         let areasDeInteresseDescricao = areasDeInteresse.isEmpty ? "Áreas de Interesse: não fornecidas" : "Áreas de Interesse: \(areasDeInteresse.description)"
@@ -28,6 +29,8 @@ class FormacaoViewController: UIViewController {
 
     
     @IBAction func formacaoTapped(_ sender: UIButton) {
+        
+        
         let valor = sender.tag
 
         switch valor {
@@ -72,6 +75,8 @@ class FormacaoViewController: UIViewController {
     }
     
     @IBAction func irParaFormacaoButtonTapped(_ sender: UIButton) {
+        // As informações sobre formação de usuários serão salvas no banco de dados e usadas posteriormente para matchmaking
+        
         if formacao == nil {
             let alert = UIAlertController(title: "Seleção de Formação", message: "Por favor, selecione uma formação antes de prosseguir.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

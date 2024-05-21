@@ -2,7 +2,7 @@
 //  PerfilViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/15/24.
+//  Created by Guilherme on 5/15/24.
 //
 
 import UIKit
@@ -25,6 +25,7 @@ class PerfilViewController: UIViewController {
             return
         }
         
+        // Dados do usuario vindos do back end
         nomeLabel.text = "\(usuario.nome) \(usuario.sobrenome)"
         localizacaoLabel.text = usuario.localizacao?.nome
         

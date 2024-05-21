@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/6/24.
+//  Created by Guilherme on 5/6/24.
 //
 
 import UIKit
@@ -18,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         FirebaseApp.configure()
 
+        // Configurando notificações por push
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if granted {
-                print("Permissão concedida")
+                print("Permissão para notificações concedida")
             } else {
                 print("Permissão negada")
             }

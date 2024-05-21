@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4830" y="-2"/>
+            <point key="canvasLocation" x="4941" y="-2"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="rJP-Sc-ihS">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHv-Ij-DG0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5546" y="-2"/>
+            <point key="canvasLocation" x="5674" y="-2"/>
         </scene>
         <!--Experiencia View Controller-->
         <scene sceneID="lPU-DN-fUE">
@@ -615,7 +615,7 @@
             </objects>
             <point key="canvasLocation" x="6375" y="-2"/>
         </scene>
-        <!--Habilidade View Controller-->
+        <!--Item-->
         <scene sceneID="CBs-7c-n33">
             <objects>
                 <viewController id="wQJ-f0-fSB" customClass="HabilidadeViewController" customModule="sensei_ia" customModuleProvider="target" sceneMemberID="viewController">
@@ -722,8 +722,8 @@
                                     </button>
                                 </subviews>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Encontre o seu sensei ou o seu aprendiz e comece a sua jornada de conhecimento!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hep-ex-OCv">
-                                <rect key="frame" x="16" y="103" width="361" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adicione mais informações sobre seu perfil e encontre sua nova parceria de desenvolvimento" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hep-ex-OCv">
+                                <rect key="frame" x="16" y="84" width="361" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.14901960780000001" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -733,6 +733,7 @@
                         <viewLayoutGuide key="safeArea" id="F7B-v8-Zp3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="AVT-5c-bER"/>
                     <navigationItem key="navigationItem" id="bMv-7d-ZLL">
                         <nil key="title"/>
                     </navigationItem>
@@ -744,9 +745,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sd3-a1-LSK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7920" y="739"/>
+            <point key="canvasLocation" x="7919.8473282442746" y="738.73239436619724"/>
         </scene>
-        <!--Pesquisa View Controller-->
+        <!--Item-->
         <scene sceneID="6Hn-dp-WMc">
             <objects>
                 <viewController id="TZX-Kd-kPS" customClass="PesquisaViewController" customModule="sensei_ia" customModuleProvider="target" sceneMemberID="viewController">
@@ -1037,6 +1038,7 @@
                         <viewLayoutGuide key="safeArea" id="EIV-Cw-21q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lZj-Nw-uFc"/>
                     <navigationItem key="navigationItem" id="N3T-q6-0hY"/>
                     <connections>
                         <outlet property="filtroTableView" destination="YYX-Ww-ybn" id="qTr-Tc-HH9"/>
@@ -1053,7 +1055,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQe-ss-35e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9555" y="740"/>
+            <point key="canvasLocation" x="9555" y="739"/>
         </scene>
         <!--Perfil View Controller-->
         <scene sceneID="E31-6B-ryD">
@@ -2220,7 +2222,7 @@
             </objects>
             <point key="canvasLocation" x="8749" y="1420"/>
         </scene>
-        <!--Chat View Controller-->
+        <!--Item-->
         <scene sceneID="ZSX-bb-pYE">
             <objects>
                 <viewController id="H2r-0K-iFp" customClass="ChatViewController" customModule="sensei_ia" customModuleProvider="target" sceneMemberID="viewController">
@@ -2385,6 +2387,7 @@
                         <viewLayoutGuide key="safeArea" id="XxN-vE-8Wk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="vAR-Rm-h7c"/>
                     <navigationItem key="navigationItem" id="2xG-kI-3ji"/>
                     <connections>
                         <outletCollection property="chatButton" destination="x1F-pH-q5s" collectionClass="NSMutableArray" id="oj3-KJ-xSH"/>
@@ -2402,11 +2405,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zqv-Lv-uSr"/>
+        <segue reference="yzh-Oj-MOE"/>
         <segue reference="yOm-1U-gEE"/>
         <segue reference="yJF-i5-hw9"/>
-        <segue reference="hEH-AJ-bv2"/>
-        <segue reference="boG-dG-Mic"/>
+        <segue reference="yxS-oD-DHy"/>
+        <segue reference="U6C-L0-MMg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Background" width="375" height="812"/>

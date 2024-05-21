@@ -16,6 +16,7 @@ class HabilidadeViewController: UIViewController, UITextFieldDelegate, UITableVi
         habilidadesTableView.delegate = self
         habilidadeTextField.delegate = self
         
+        // A lista de habilidades que usaremos para unir mentores e aprendizes pode ser poderá ser carregada com dados de tabelas no banco de dados ou de uma chamada de API
         loadHabilidades()
         habilidadesTableView.isHidden = true // Esconde a tabela até que seja necessário mostrá-la
     }
@@ -53,6 +54,8 @@ class HabilidadeViewController: UIViewController, UITextFieldDelegate, UITableVi
     }
 
     func loadHabilidades() {
+        // O JSON habilidades representa uma resposta do back end
+        
         if let path = Bundle.main.path(forResource: "habilidades", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))

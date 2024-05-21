@@ -2,7 +2,7 @@
 //  ExperienciaViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/11/24.
+//  Created by Guilherme on 5/11/24.
 //
 
 import UIKit
@@ -24,6 +24,8 @@ class ExperienciaViewController: UIViewController {
     }
     
     @IBAction func experienceButtonTapped(_ sender: UIButton) {
+        // As informações para nivel de experiência de habilidades serão armazenadas no perfil do usuário no banco de dados e usadas posteriormente para unir mentores e aprendizes no matchmaking
+        
         let experiencia: (id: Int, nome: String)
 
         switch sender.tag {

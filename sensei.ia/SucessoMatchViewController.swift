@@ -2,7 +2,7 @@
 //  SucessoMatchViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/15/24.
+//  Created by Guilherme on 5/15/24.
 //
 
 import UIKit
@@ -31,6 +31,8 @@ class SucessoMatchViewController: UIViewController {
     }
       
     @objc func matchButtonTapped() {
+        // envia o usuario ao perifl de um match
+        
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
         if let match = match {

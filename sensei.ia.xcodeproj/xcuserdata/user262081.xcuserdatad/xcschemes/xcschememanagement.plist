@@ -23,12 +23,30 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<key>sensei.ia.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9044473D2BE9A803006E67B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>904447532BE9A804006E67B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9044475D2BE9A804006E67B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

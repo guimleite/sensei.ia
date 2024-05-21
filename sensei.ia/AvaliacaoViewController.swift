@@ -2,7 +2,7 @@
 //  AvaliacaoViewController.swift
 //  sensei.ia
 //
-//  Created by user262081 on 5/19/24.
+//  Created by Guilherme on 5/19/24.
 //
 
 import UIKit
@@ -40,6 +40,8 @@ class AvaliacaoViewController: UIViewController {
     }
     
     @IBAction func enviarTapped(_ sender: UIButton) {
+        // Avalicação do usuário será recebido do back end
+        
         let alert = UIAlertController(title: nil, message: "Avaliação salva", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
