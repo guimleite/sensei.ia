@@ -1,3 +1,6 @@
+
+![logos](https://github.com/guimleite/sensei.ia/assets/86362781/932b0954-995a-4968-bdbb-3cb3a4932c72)
+
 # Repositório para o projeto do Challenge DB-1 (Tinder de Mentores e Aprendizes) do curso de Análise e Desenvolvimento de Sistemas da FIAP
 
 
